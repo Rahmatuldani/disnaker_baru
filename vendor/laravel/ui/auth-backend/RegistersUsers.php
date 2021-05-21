@@ -2,6 +2,7 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use App\Models\Province;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -18,7 +19,11 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $provinsi = Province::where('name', 'SUMATERA BARAT')->first();
+        $data = array(
+            'daerah' => $provinsi->regencies,
+        );
+        return view('auth.register', $data);
     }
 
     /**

@@ -20,17 +20,19 @@ use Composer\Semver\VersionParser;
 
 
 
+
+
 class InstalledVersions
 {
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'ab6eba7389ff3748afd469e26a02510eabd74659',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -43,6 +45,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '9cb795bf30988e8c96dd3c40623c48a877bc6714',
+    ),
+    'azishapidin/indoregion' => 
+    array (
+      'pretty_version' => '3.0.3',
+      'version' => '3.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '95874c8b89ae8216fad11ec0f8e81de544331ded',
     ),
     'brick/math' => 
     array (
@@ -455,12 +466,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'ab6eba7389ff3748afd469e26a02510eabd74659',
     ),
     'laravel/sail' => 
     array (
@@ -488,6 +499,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'e2478cd0342a92ec1c8c77422553bda8ee004fd0',
+    ),
+    'laravolt/indonesia' => 
+    array (
+      'pretty_version' => 'v0.29',
+      'version' => '0.29.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '750b212ae20ab13fb192ce5b42dc1c4a421a036e',
     ),
     'league/commonmark' => 
     array (
@@ -589,6 +609,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '06e2ebd25f2869e54a306dda991f7db58066f7f6',
+    ),
+    'parsecsv/php-parsecsv' => 
+    array (
+      'pretty_version' => '1.3.0',
+      'version' => '1.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b444afae2f407537ae713f98a7a0c94e296918e6',
     ),
     'phar-io/manifest' => 
     array (
@@ -1313,7 +1342,6 @@ foreach (self::getInstalled() as $installed) {
 $packages[] = array_keys($installed['versions']);
 }
 
-
 if (1 === \count($packages)) {
 return $packages[0];
 }
@@ -1505,6 +1533,7 @@ public static function reload($data)
 self::$installed = $data;
 self::$installedByVendor = array();
 }
+
 
 
 

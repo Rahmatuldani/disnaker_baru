@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'slug' => env('APP_SLUG', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -174,6 +175,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        AzisHapidin\IndoRegion\IndoRegionServiceProvider::class,
 
     ],
 

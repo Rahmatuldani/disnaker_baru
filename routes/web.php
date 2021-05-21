@@ -15,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('landing');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('lowongan', function () { return view('lowongan'); })->name('lowongan');
+Route::get('bkk', function () { return view('bkk'); })->name('bkk');
+Route::get('perusahaan', function () { return view('perusahaan'); })->name('perusahaan');
+

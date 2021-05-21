@@ -35,6 +35,7 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '7f6e3de7af83a54fa34e8222e98ec3eb' => __DIR__ . '/..' . '/azishapidin/indoregion/src/RawDataGetter.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
     );
 
@@ -103,6 +104,7 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'ParseCsv\\' => 9,
         ),
         'O' => 
         array (
@@ -121,6 +123,7 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
+            'Laravolt\\Indonesia\\' => 19,
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Sail\\' => 13,
@@ -172,6 +175,7 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         ),
         'A' => 
         array (
+            'AzisHapidin\\IndoRegion\\' => 23,
             'Asm89\\Stack\\' => 12,
             'App\\' => 4,
         ),
@@ -356,6 +360,10 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'ParseCsv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/parsecsv/php-parsecsv/src',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -379,6 +387,10 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         'League\\CommonMark\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
+        ),
+        'Laravolt\\Indonesia\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravolt/indonesia/src',
         ),
         'Laravel\\Ui\\' => 
         array (
@@ -489,6 +501,10 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'AzisHapidin\\IndoRegion\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/azishapidin/indoregion/src',
+        ),
         'Asm89\\Stack\\' => 
         array (
             0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
@@ -512,7 +528,14 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
+        'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
+        'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -522,7 +545,11 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\District' => __DIR__ . '/../..' . '/app/Models/District.php',
+        'App\\Models\\Province' => __DIR__ . '/../..' . '/app/Models/Province.php',
+        'App\\Models\\Regency' => __DIR__ . '/../..' . '/app/Models/Regency.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Village' => __DIR__ . '/../..' . '/app/Models/Village.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -531,6 +558,14 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'AzisHapidin\\IndoRegion\\IndoRegion' => __DIR__ . '/..' . '/azishapidin/indoregion/src/IndoRegion.php',
+        'AzisHapidin\\IndoRegion\\IndoRegionPublishCommand' => __DIR__ . '/..' . '/azishapidin/indoregion/src/IndoRegionPublishCommand.php',
+        'AzisHapidin\\IndoRegion\\IndoRegionServiceProvider' => __DIR__ . '/..' . '/azishapidin/indoregion/src/IndoRegionServiceProvider.php',
+        'AzisHapidin\\IndoRegion\\RawDataGetter' => __DIR__ . '/..' . '/azishapidin/indoregion/src/RawDataGetter.php',
+        'AzisHapidin\\IndoRegion\\Traits\\DistrictTrait' => __DIR__ . '/..' . '/azishapidin/indoregion/src/Traits/DistrictTrait.php',
+        'AzisHapidin\\IndoRegion\\Traits\\ProvinceTrait' => __DIR__ . '/..' . '/azishapidin/indoregion/src/Traits/ProvinceTrait.php',
+        'AzisHapidin\\IndoRegion\\Traits\\RegencyTrait' => __DIR__ . '/..' . '/azishapidin/indoregion/src/Traits/RegencyTrait.php',
+        'AzisHapidin\\IndoRegion\\Traits\\VillageTrait' => __DIR__ . '/..' . '/azishapidin/indoregion/src/Traits/VillageTrait.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
@@ -632,6 +667,11 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\IndoRegionDistrictSeeder' => __DIR__ . '/../..' . '/database/seeders/IndoRegionDistrictSeeder.php',
+        'Database\\Seeders\\IndoRegionProvinceSeeder' => __DIR__ . '/../..' . '/database/seeders/IndoRegionProvinceSeeder.php',
+        'Database\\Seeders\\IndoRegionRegencySeeder' => __DIR__ . '/../..' . '/database/seeders/IndoRegionRegencySeeder.php',
+        'Database\\Seeders\\IndoRegionSeeder' => __DIR__ . '/../..' . '/database/seeders/IndoRegionSeeder.php',
+        'Database\\Seeders\\IndoRegionVillageSeeder' => __DIR__ . '/../..' . '/database/seeders/IndoRegionVillageSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -2593,6 +2633,47 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
         'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
         'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
+        'Laravolt\\Indonesia\\Commands\\SeedCommand' => __DIR__ . '/..' . '/laravolt/indonesia/src/Commands/SeedCommand.php',
+        'Laravolt\\Indonesia\\Commands\\SyncCoordinateCommand' => __DIR__ . '/..' . '/laravolt/indonesia/src/Commands/SyncCoordinateCommand.php',
+        'Laravolt\\Indonesia\\Facade' => __DIR__ . '/..' . '/laravolt/indonesia/src/Facade.php',
+        'Laravolt\\Indonesia\\Http\\Controllers\\KabupatenController' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Controllers/KabupatenController.php',
+        'Laravolt\\Indonesia\\Http\\Controllers\\KecamatanController' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Controllers/KecamatanController.php',
+        'Laravolt\\Indonesia\\Http\\Controllers\\KelurahanController' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Controllers/KelurahanController.php',
+        'Laravolt\\Indonesia\\Http\\Controllers\\ProvinsiController' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Controllers/ProvinsiController.php',
+        'Laravolt\\Indonesia\\Http\\Requests\\Kabupaten\\Store' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Requests/Kabupaten/Store.php',
+        'Laravolt\\Indonesia\\Http\\Requests\\Kabupaten\\Update' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Requests/Kabupaten/Update.php',
+        'Laravolt\\Indonesia\\Http\\Requests\\Kecamatan\\Store' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Requests/Kecamatan/Store.php',
+        'Laravolt\\Indonesia\\Http\\Requests\\Kecamatan\\Update' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Requests/Kecamatan/Update.php',
+        'Laravolt\\Indonesia\\Http\\Requests\\Kelurahan\\Store' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Requests/Kelurahan/Store.php',
+        'Laravolt\\Indonesia\\Http\\Requests\\Kelurahan\\Update' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Requests/Kelurahan/Update.php',
+        'Laravolt\\Indonesia\\Http\\Requests\\Provinsi\\Store' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Requests/Provinsi/Store.php',
+        'Laravolt\\Indonesia\\Http\\Requests\\Provinsi\\Update' => __DIR__ . '/..' . '/laravolt/indonesia/src/Http/Requests/Provinsi/Update.php',
+        'Laravolt\\Indonesia\\IndonesiaService' => __DIR__ . '/..' . '/laravolt/indonesia/src/IndonesiaService.php',
+        'Laravolt\\Indonesia\\Models\\City' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/City.php',
+        'Laravolt\\Indonesia\\Models\\District' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/District.php',
+        'Laravolt\\Indonesia\\Models\\Extended\\Kabupaten' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Extended/Kabupaten.php',
+        'Laravolt\\Indonesia\\Models\\Extended\\Kecamatan' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Extended/Kecamatan.php',
+        'Laravolt\\Indonesia\\Models\\Extended\\Kelurahan' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Extended/Kelurahan.php',
+        'Laravolt\\Indonesia\\Models\\Extended\\Provinsi' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Extended/Provinsi.php',
+        'Laravolt\\Indonesia\\Models\\Kabupaten' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Kabupaten.php',
+        'Laravolt\\Indonesia\\Models\\Kecamatan' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Kecamatan.php',
+        'Laravolt\\Indonesia\\Models\\Kelurahan' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Kelurahan.php',
+        'Laravolt\\Indonesia\\Models\\Model' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Model.php',
+        'Laravolt\\Indonesia\\Models\\Province' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Province.php',
+        'Laravolt\\Indonesia\\Models\\Provinsi' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Provinsi.php',
+        'Laravolt\\Indonesia\\Models\\Village' => __DIR__ . '/..' . '/laravolt/indonesia/src/Models/Village.php',
+        'Laravolt\\Indonesia\\Permission' => __DIR__ . '/..' . '/laravolt/indonesia/src/Permission.php',
+        'Laravolt\\Indonesia\\Seeds\\CitiesSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/CitiesSeeder.php',
+        'Laravolt\\Indonesia\\Seeds\\CsvtoArray' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/CsvtoArray.php',
+        'Laravolt\\Indonesia\\Seeds\\DatabaseSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/DatabaseSeeder.php',
+        'Laravolt\\Indonesia\\Seeds\\DistrictsSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/DistrictsSeeder.php',
+        'Laravolt\\Indonesia\\Seeds\\ProvincesSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/ProvincesSeeder.php',
+        'Laravolt\\Indonesia\\Seeds\\VillagesSeeder' => __DIR__ . '/..' . '/laravolt/indonesia/src/Seeds/VillagesSeeder.php',
+        'Laravolt\\Indonesia\\ServiceProvider' => __DIR__ . '/..' . '/laravolt/indonesia/src/ServiceProvider.php',
+        'Laravolt\\Indonesia\\Tables\\KabupatenTable' => __DIR__ . '/..' . '/laravolt/indonesia/src/Tables/KabupatenTable.php',
+        'Laravolt\\Indonesia\\Tables\\KecamatanTable' => __DIR__ . '/..' . '/laravolt/indonesia/src/Tables/KecamatanTable.php',
+        'Laravolt\\Indonesia\\Tables\\KelurahanTable' => __DIR__ . '/..' . '/laravolt/indonesia/src/Tables/KelurahanTable.php',
+        'Laravolt\\Indonesia\\Tables\\ProvinsiTable' => __DIR__ . '/..' . '/laravolt/indonesia/src/Tables/ProvinsiTable.php',
         'League\\CommonMark\\Block\\Element\\AbstractBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractBlock.php',
         'League\\CommonMark\\Block\\Element\\AbstractStringContainerBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractStringContainerBlock.php',
         'League\\CommonMark\\Block\\Element\\BlockQuote' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/BlockQuote.php',
@@ -3447,6 +3528,12 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         'PHPUnit\\Util\\Xml\\SuccessfulSchemaDetectionResult' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/SuccessfulSchemaDetectionResult.php',
         'PHPUnit\\Util\\Xml\\ValidationResult' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/ValidationResult.php',
         'PHPUnit\\Util\\Xml\\Validator' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Validator.php',
+        'ParseCsv\\Csv' => __DIR__ . '/..' . '/parsecsv/php-parsecsv/src/Csv.php',
+        'ParseCsv\\enums\\AbstractEnum' => __DIR__ . '/..' . '/parsecsv/php-parsecsv/src/enums/AbstractEnum.php',
+        'ParseCsv\\enums\\DatatypeEnum' => __DIR__ . '/..' . '/parsecsv/php-parsecsv/src/enums/DatatypeEnum.php',
+        'ParseCsv\\enums\\FileProcessingModeEnum' => __DIR__ . '/..' . '/parsecsv/php-parsecsv/src/enums/FileProcessingModeEnum.php',
+        'ParseCsv\\enums\\SortEnum' => __DIR__ . '/..' . '/parsecsv/php-parsecsv/src/enums/SortEnum.php',
+        'ParseCsv\\extensions\\DatatypeTrait' => __DIR__ . '/..' . '/parsecsv/php-parsecsv/src/extensions/DatatypeTrait.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',

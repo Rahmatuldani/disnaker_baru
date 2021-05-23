@@ -11,10 +11,12 @@
                     <!-- Login form-->
                     <form action="#" method="POST">
                         @csrf
-                        
-                        <div class="alert alert-primary" role="alert">
-                            A primary alert—check it out!
-                        </div>
+
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
 
                         <!-- Form Group (email address)-->
                         <div class="form-group">
@@ -29,7 +31,7 @@
                         <!-- Form Group (password)-->
                         <div class="form-group">
                             <label class="small mb-1" for="inputPassword">Password</label>
-                            <input class="form-control @error('password') is-invalid @enderror" id="inputPassword" type="password" placeholder="Enter password" required autocomplete="current-password" />
+                            <input class="form-control @error('password') is-invalid @enderror" id="inputPassword" type="password" name="password" placeholder="Enter password" required autocomplete="current-password" />
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

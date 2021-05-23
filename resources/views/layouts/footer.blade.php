@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="footer-brand">SB UI Kit Pro</div>
+                    <div class="footer-brand">{{ config('app.slug') }}</div>
                     <div class="mb-3">Design made easy</div>
                     <div class="icon-list-social mb-5">
                         <a class="icon-list-social-link" href="#!"><i class="fab fa-instagram"></i></a><a class="icon-list-social-link" href="#!"><i class="fab fa-facebook"></i></a><a class="icon-list-social-link" href="#!"><i class="fab fa-github"></i></a><a class="icon-list-social-link" href="#!"><i class="fab fa-twitter"></i></a>

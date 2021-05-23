@@ -43,70 +43,50 @@
     <div class="container col-xl-8 mb-5">
         <!-- Example Colored Cards for Dashboard Demo-->
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="card bg-primary text-white mb-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-3">
-                                <div class="text-white-75 small">Earnings (Monthly)</div>
-                                <div class="text-lg font-weight-bold">$40,000</div>
+                                <div class="text-white-75 small">BKK</div>
+                                <div class="text-lg font-weight-bold">0</div>
                             </div>
-                            <i class="feather-xl text-white-50" data-feather="calendar"></i>
                         </div>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Report</a>
+                        <a class="small text-white stretched-link" href="{{ route('bkk') }}">Lihat lebih lanjut</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="card bg-warning text-white mb-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-3">
-                                <div class="text-white-75 small">Earnings (Annual)</div>
-                                <div class="text-lg font-weight-bold">$215,000</div>
+                                <div class="text-white-75 small">Perusahaan</div>
+                                <div class="text-lg font-weight-bold">0</div>
                             </div>
-                            <i class="feather-xl text-white-50" data-feather="dollar-sign"></i>
                         </div>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Report</a>
+                        <a class="small text-white stretched-link" href="{{ route('perusahaan') }}">Lihat lebih lanjut</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="card bg-success text-white mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="mr-3">
-                                <div class="text-white-75 small">Task Completion</div>
-                                <div class="text-lg font-weight-bold">24</div>
-                            </div>
-                            <i class="feather-xl text-white-50" data-feather="check-square"></i>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Tasks</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="card bg-danger text-white mb-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-3">
-                                <div class="text-white-75 small">Pending Requests</div>
-                                <div class="text-lg font-weight-bold">17</div>
+                                <div class="text-white-75 small">Lowongan Pekerjaan</div>
+                                <div class="text-lg font-weight-bold">0</div>
                             </div>
-                            <i class="feather-xl text-white-50" data-feather="message-circle"></i>
                         </div>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Requests</a>
+                        <a class="small text-white stretched-link" href="{{ route('lowongan') }}">Lihat lebih lanjut</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>

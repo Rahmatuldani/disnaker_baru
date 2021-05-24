@@ -27,17 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected function redirectTo()
-    {
-        if (Auth::user()->role == 'pencaker') {
-            # code...
-        } else if (Auth::user()->role == 'perusahaan'){
-            # code...
-        } else if (Auth::user()->role == 'bkk'){
-            return RouteServiceProvider::BKK;
-        }
-
-    }
+    protected $redirectTo = RouteServiceProvider::BKK;
 
     /**
      * Create a new controller instance.

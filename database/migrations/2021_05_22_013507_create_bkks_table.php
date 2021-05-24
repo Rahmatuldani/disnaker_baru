@@ -15,7 +15,6 @@ class CreateBkksTable extends Migration
     {
         Schema::create('bkks', function (Blueprint $table) {
             $table->integer('bkk_id')->autoIncrement();
-            $table->string('username');
             $table->string('bkk_nama');
             $table->string('bkk_alamat');
             $table->string('bkk_telepon');
@@ -23,9 +22,6 @@ class CreateBkksTable extends Migration
             $table->integer('pencaker')->default(0);
             $table->tinyInteger('is_actived');
             $table->timestamps();
-
-            $table->foreign('username')->references('username')->on('users')
-            ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

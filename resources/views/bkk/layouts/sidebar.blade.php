@@ -37,7 +37,7 @@
             <div class="collapse" id="collapseData" data-parent="#accordionSidenav">
                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                     <a class="nav-link" href="{{ route('bkk.pencaker') }}">Pencari Kerja</a>
-                    <a class="nav-link" href="{{ route('bkk.lowongan') }}">Lowongan Pekerjaan</a>
+                    {{-- <a class="nav-link" href="{{ route('bkk.lowongan') }}">Lowongan Pekerjaan</a> --}}
                 </nav>
             </div>
 
@@ -50,7 +50,7 @@
             <div class="collapse" id="collapseLaporan" data-parent="#accordionSidenav">
                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                     <a class="nav-link" href="{{ route('bkk.lpencaker') }}">Pencari Kerja</a>
-                    <a class="nav-link" href="{{ route('bkk.llowongan') }}">Lowongan Pekerjaan</a>
+                    {{-- <a class="nav-link" href="{{ route('bkk.llowongan') }}">Lowongan Pekerjaan</a> --}}
                 </nav>
             </div>
         </div>

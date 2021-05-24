@@ -32,51 +32,25 @@
     <div class="container">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h2 class="mb-0">Bursa Kerja Khusus</h2>
-            <a class="btn btn-sm btn-primary d-inline-flex align-items-center" href="#!">See more<i class="ml-1" data-feather="arrow-right"></i></a>
+            <a class="btn btn-sm btn-primary d-inline-flex align-items-center" href="{{ route('bkk') }}">See more<i class="ml-1" data-feather="arrow-right"></i></a>
         </div>
         <div class="row">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <a class="card lift h-100" href="#!"
-                    ><div class="card-flag card-flag-dark card-flag-top-right">Listed 1 month</div>
-                    <img class="card-img-top" src="https://source.unsplash.com/2d4lAQAlbDA/800x500" alt="..." />
-                    <div class="card-body">
-                        <h3 class="text-primary mb-0">$678,999</h3>
-                        <div class="small text-gray-800 font-weight-500">4 bd | 3 ba | 1,820 sqft</div>
-                        <div class="small text-gray-500">Picsard, GA</div>
-                    </div>
-                    <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
-                        <div class="small text-gray-500">View listing</div>
-                        <div class="small text-gray-500"><i data-feather="arrow-right"></i></div></div
-                ></a>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <a class="card lift h-100" href="#!"
-                    ><div class="card-flag card-flag-dark card-flag-top-right">Listed 6 days</div>
-                    <img class="card-img-top" src="https://source.unsplash.com/MP0bgaS_d1c/800x500" alt="..." />
-                    <div class="card-body">
-                        <h3 class="text-primary mb-0">$409,000</h3>
-                        <div class="small text-gray-800 font-weight-500">3 bd | 2 ba | 1,350 sqft</div>
-                        <div class="small text-gray-500">Sartalik, GA</div>
-                    </div>
-                    <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
-                        <div class="small text-gray-500">View listing</div>
-                        <div class="small text-gray-500"><i data-feather="arrow-right"></i></div></div
-                ></a>
-            </div>
-            <div class="col-lg-4">
-                <a class="card lift h-100" href="#!"
-                    ><div class="card-flag card-flag-dark card-flag-top-right">Listed 2 weeks</div>
-                    <img class="card-img-top" src="https://source.unsplash.com/iAftdIcgpFc/800x500" alt="..." />
-                    <div class="card-body">
-                        <h3 class="text-primary mb-0">$1,299,999</h3>
-                        <div class="small text-gray-800 font-weight-500">6 bd | 5.5 ba | 4,220 sqft</div>
-                        <div class="small text-gray-500">Picsard, GA</div>
-                    </div>
-                    <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
-                        <div class="small text-gray-500">View listing</div>
-                        <div class="small text-gray-500"><i data-feather="arrow-right"></i></div></div
-                ></a>
-            </div>
+            @foreach ($bkk as $b)
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a class="card lift h-100" href="#!"
+                        ><div class="card-flag card-flag-dark card-flag-top-right">Listed {{ date('M Y', strtotime($b['created_at'])) }}</div>
+                        <img class="card-img-top" src="https://source.unsplash.com/2d4lAQAlbDA/800x500" alt="..." />
+                        <div class="card-body">
+                            <h3 class="text-primary mb-0">{{ $b['bkk_nama'] }}</h3>
+                            <div class="small text-gray-800 font-weight-500">{{ $b['bkk_daerah'] }}</div>
+                            <div class="small text-gray-500">{{ $b['bkk_alamat'] }}</div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
+                            <div class="small text-gray-500">View listing</div>
+                            <div class="small text-gray-500"><i data-feather="arrow-right"></i></div></div
+                    ></a>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>

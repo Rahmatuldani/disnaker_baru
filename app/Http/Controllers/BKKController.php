@@ -19,7 +19,7 @@ class BKKController extends Controller
 
     public function pencaker(Request $request, $action = null)
     {
-        $bkk = BKK::where('username', Auth::user()->username)->first();
+        $bkk = BKK::find(Auth::user()->bkk_id);
         if ($action == null) {
             $provinsi = Province::where('name', 'SUMATERA BARAT')->first();
             $data = array(
@@ -68,13 +68,59 @@ class BKKController extends Controller
         return view('bkk.lowongan');
     }
 
-    public function lpencaker()
+    public function lpencaker(Request $request, $action = null)
     {
-        return view('bkk.lpencaker');
+        if ($action == null) {
+            return view('bkk.lpencaker');
+        } else {
+
+        }
     }
 
     public function llowongan()
     {
         return view('bkk.llowongan');
+    }
+
+    public function profile(Request $request, $action = null)
+    {
+        if ($action == null) {
+            $data = array(
+                'akun' => User::join('bkks', 'bkks.bkk_id', '=', 'users.bkk_id')
+                                ->where('user_id', Auth::user()->user_id)->first(),
+            );
+            return view('bkk.account', $data);
+        } else if ($action == 'edit') {
+            $user = User::find(Auth::user()->user_id);
+            $user->username = $request['username'];
+            $user->nama = $request['nama'];
+            $user->alamat = $request['alamat'];
+            $user->save();
+
+            return redirect()->route('bkk.profile')->with('message', 'Profil berhasil diubah!');
+        } else if ($action == 'photo') {
+            $file = $request->file('photo');
+            $user = User::find(Auth::user()->user_id);
+
+            dd($file);
+
+            // // Generate a file name with extension
+            // $fileName = $user->nama.'.'.$file->getClientOriginalExtension();
+
+            // // Save the file
+            // $path = $file->storeAs('public/images', $fileName);
+
+            // $user->photo = $path;
+            // $user->save();
+
+            // return redirect()->route('bkk.profile')->with('message', 'Change Photo Successful!');
+        }
+    }
+
+    public function security(Request $request, $action = null)
+    {
+        if ($action == null) {
+            return view('bkk.security');
+        }
     }
 }

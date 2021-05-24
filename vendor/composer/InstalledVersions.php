@@ -20,8 +20,6 @@ use Composer\Semver\VersionParser;
 
 
 
-
-
 class InstalledVersions
 {
 private static $installed = array (
@@ -32,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ab6eba7389ff3748afd469e26a02510eabd74659',
+    'reference' => '5df691aaf019c49021ce3a55e4d7916b41e9aed0',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -54,6 +52,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '95874c8b89ae8216fad11ec0f8e81de544331ded',
+    ),
+    'barryvdh/laravel-debugbar' => 
+    array (
+      'pretty_version' => 'v3.5.7',
+      'version' => '3.5.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '88fd9cfa144b06b2549e9d487fdaec68265e791e',
     ),
     'brick/math' => 
     array (
@@ -471,7 +478,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ab6eba7389ff3748afd469e26a02510eabd74659',
+      'reference' => '5df691aaf019c49021ce3a55e4d7916b41e9aed0',
     ),
     'laravel/sail' => 
     array (
@@ -500,15 +507,6 @@ private static $installed = array (
       ),
       'reference' => 'e2478cd0342a92ec1c8c77422553bda8ee004fd0',
     ),
-    'laravolt/indonesia' => 
-    array (
-      'pretty_version' => 'v0.29',
-      'version' => '0.29.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '750b212ae20ab13fb192ce5b42dc1c4a421a036e',
-    ),
     'league/commonmark' => 
     array (
       'pretty_version' => '1.6.2',
@@ -535,6 +533,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+    ),
+    'maximebf/debugbar' => 
+    array (
+      'pretty_version' => 'v1.16.5',
+      'version' => '1.16.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6d51ee9e94cff14412783785e79a4e7ef97b9d62',
     ),
     'mockery/mockery' => 
     array (
@@ -1040,6 +1047,15 @@ private static $installed = array (
       ),
       'reference' => '5d5f97809015102116208b976eb2edb44b689560',
     ),
+    'symfony/debug' => 
+    array (
+      'pretty_version' => 'v4.4.22',
+      'version' => '4.4.22.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '45b2136377cca5f10af858968d6079a482bca473',
+    ),
     'symfony/deprecation-contracts' => 
     array (
       'pretty_version' => 'v2.4.0',
@@ -1342,6 +1358,7 @@ foreach (self::getInstalled() as $installed) {
 $packages[] = array_keys($installed['versions']);
 }
 
+
 if (1 === \count($packages)) {
 return $packages[0];
 }
@@ -1533,7 +1550,6 @@ public static function reload($data)
 self::$installed = $data;
 self::$installedByVendor = array();
 }
-
 
 
 

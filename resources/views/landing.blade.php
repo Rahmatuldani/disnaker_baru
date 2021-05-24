@@ -43,7 +43,7 @@
     <div class="container col-xl-8 mb-5">
         <!-- Example Colored Cards for Dashboard Demo-->
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="card bg-primary text-white mb-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
@@ -59,34 +59,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="card bg-warning text-white mb-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-3">
-                                <div class="text-white-75 small">Perusahaan</div>
+                                <div class="text-white-75 small">Pencari Kerja</div>
                                 <div class="text-lg font-weight-bold">0</div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="{{ route('perusahaan') }}">Lihat lebih lanjut</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card bg-danger text-white mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="mr-3">
-                                <div class="text-white-75 small">Lowongan Pekerjaan</div>
-                                <div class="text-lg font-weight-bold">0</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="{{ route('lowongan') }}">Lihat lebih lanjut</a>
+                        <a class="small text-white stretched-link" href="#!">Lihat lebih lanjut</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>

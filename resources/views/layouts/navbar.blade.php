@@ -4,9 +4,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-lg-5">
                 <li class="nav-item"><a class="nav-link" href="{{ route('landing') }}">Home </a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('lowongan') }}">Lowongan Pekerjaan </a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('bkk') }}">BKK </a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('perusahaan') }}">Perusahaan </a></li>
+                {{-- <li class="nav-item"><a class="nav-link" href="{{ route('lowongan') }}">Lowongan Pekerjaan </a></li> --}}
+                <li class="nav-item"><a class="nav-link" href="{{ route('bkk', 6) }}">BKK </a></li>
+                {{-- <li class="nav-item"><a class="nav-link" href="{{ route('perusahaan') }}">Perusahaan </a></li> --}}
                 @auth
                     <!-- User Dropdown-->
                     <li class="nav-item dropdown no-caret mr-3 mr-lg-0 dropdown-user">
@@ -21,7 +21,7 @@
                                 </div>
                             </h6>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route(Auth::user()->role.'.index') }}">
+                            <a class="dropdown-item" href="{{ route('bkk.index') }}">
                                 <div class="dropdown-item-icon"><i data-feather="activity"></i></div>
                                 Dashboard
                             </a>

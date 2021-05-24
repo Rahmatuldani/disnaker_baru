@@ -20,7 +20,7 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/home';
     public const PENCAKER = '/home';
     public const PERUSAHAAN = '/home';
-    public const BKK = '/bkk';
+    public const BKK = '/bkk/dashboard';
 
     /**
      * The controller namespace for the application.

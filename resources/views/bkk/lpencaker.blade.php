@@ -25,7 +25,8 @@
     <div class="card mb-4">
         <div class="card-header">Cetak laporan Pencari Kerja</div>
         <div class="card-body">
-            <form action="#" method="post" id="lpencaker">
+            <form action="{{ route('bkk.print') }}" method="post" id="lpencaker">
+                @csrf
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Pilih Jenis Kelamin</label>
@@ -45,7 +46,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Pilih Jenis Cetak</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="jk">
+                        <select class="form-control" id="exampleFormControlSelect1" name="type">
                             <option value="excel">Excel</option>
                             <option value="pdf">PDF</option>
                         </select>
@@ -68,7 +69,7 @@
 <script>
     $(function() {
       $('input[name="tanggal"]').daterangepicker({
-        opens: 'left'
+        opens: 'center',
       });
     });
     </script>

@@ -23,7 +23,7 @@ class BKK extends Model
      * @var array
      */
     protected $fillable = [
-        'username',
+        'user_id',
         'bkk_nama',
         'bkk_alamat',
         'bkk_telepon',

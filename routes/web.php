@@ -13,20 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-})->name('landing');
+Route::get('/', [App\Http\Controllers\HomePageController::class, 'landing'])->name('landing');
 
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('lowonganPage', function () { return view('lowongan'); })->name('lowongan');
-Route::get('bkkPage/{limit?}', [App\Http\Controllers\HomePageController::class, 'bkk'])->name('bkk');
-Route::get('perusahaanPage', function () { return view('perusahaan'); })->name('perusahaan');
-Route::get('databkk', function ($id) {
-    return 'echo';
-});
+Route::match(['get', 'post'], 'bkkPage/{limit?}', [App\Http\Controllers\HomePageController::class, 'bkk'])->name('bkk');
+Route::match(['get', 'post'], 'newsPage/{limit?}', [App\Http\Controllers\HomePageController::class, 'news'])->name('news');
 
 
 Route::middleware(['auth','verified'])->group(function () {
@@ -37,7 +31,10 @@ Route::middleware(['auth','verified'])->group(function () {
         Route::get('lowongan', [App\Http\Controllers\BKKController::class, 'lowongan'])->name('bkk.lowongan');
         Route::get('llowongan', [App\Http\Controllers\BKKController::class, 'llowongan'])->name('bkk.llowongan');
         Route::match(['get', 'post'], 'profile/{action?}', [App\Http\Controllers\BKKController::class, 'profile'])->name('bkk.profile');
+        Route::match(['get', 'post'], 'bkk/{action?}', [App\Http\Controllers\BKKController::class, 'bkk'])->name('bkk.bkk');
         Route::match(['get', 'post'], 'security/{action?}', [App\Http\Controllers\BKKController::class, 'security'])->name('bkk.security');
+        Route::post('print', [App\Http\Controllers\BKKController::class, 'print'])->name('bkk.print');
+        Route::match(['get', 'post'], 'ipk1/{action?}', [App\Http\Controllers\BKKController::class, 'ipk1'])->name('bkk.ipk1');
     });
 });
 

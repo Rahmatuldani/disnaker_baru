@@ -8,17 +8,27 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10 text-center">
-                    <h1 class="page-header-title">Cari Bursa Kerja Khusus BKK</h1>
-                    <p class="page-header-text mb-5">Opening your home to vacationers is a great way to earn some extra income, and this is a great way to get started!</p>
+                    <h1 class="page-header-title">Cari Tempat Bursa Kerja Khusus</h1>
+                    <p class="page-header-text mb-5">Tempat pelayanan pencarian kerja untuk pencari kerja</p>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 text-center">
-                    <form class="form-inline justify-content-center">
-                        <div class="form-group flex-fill mb-2 mr-2"><label class="sr-only" for="inputSearch">Enter and address, city, state, or ZIP</label><input class="form-control form-control-solid w-100" id="inputSearch" type="search" placeholder="Enter and address, city, state, or ZIP" /></div>
+                    <form class="form-inline justify-content-center" action="{{ route('bkk') }}" method="POST">
+                        @csrf
+                        <div class="form-group flex-fill mb-2 mr-2">
+                            <label class="sr-only" for="inputSearch">Masukan nama Daerah</label>
+                            <input type="hidden" name="type" value="search">
+                            <input class="form-control form-control-solid w-100" id="inputSearch" type="search" name="daerah" list="daerahList" placeholder="Masukan nama daerah" />
+                            <datalist id="daerahList">
+                                <option value="SEMUA"></option>
+                                @foreach ($daerah as $d)
+                                    <option value="{{$d->name}}"></option>
+                                @endforeach
+                            </datalist>
+                        </div>
                         <button class="btn btn-teal font-weight-500 mb-2" type="submit">Search</button>
                     </form>
-                    <p class="page-header-text small mb-0">By signing up, you agree to our <a href="#!">terms of service</a></p>
                 </div>
             </div>
         </div>
@@ -32,23 +42,27 @@
     <div class="container">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h2 class="mb-0">Bursa Kerja Khusus</h2>
-            <a class="btn btn-sm btn-primary d-inline-flex align-items-center" href="{{ route('bkk') }}">See more<i class="ml-1" data-feather="arrow-right"></i></a>
+            @if ($see)
+                <a class="btn btn-sm btn-primary d-inline-flex align-items-center" href="{{ route('bkk') }}">See more<i class="ml-1" data-feather="arrow-right"></i></a>
+            @endif
         </div>
         <div class="row">
             @foreach ($bkk as $b)
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a class="card lift h-100" href="#!"
-                        ><div class="card-flag card-flag-dark card-flag-top-right">Listed {{ date('M Y', strtotime($b['created_at'])) }}</div>
-                        <img class="card-img-top" src="https://source.unsplash.com/2d4lAQAlbDA/800x500" alt="..." />
+                <div class="col-lg-4 mb-5 mb-lg-5">
+                    <a class="card lift h-100" href="#!">
+                        <div class="card-flag card-flag-dark card-flag-top-right">Listed {{ date('M Y', strtotime($b['created_at'])) }}</div>
+                        <img class="card-img-top" src="{{ asset('bkk/'.$b['bkk_photo']) }}" alt="..." />
                         <div class="card-body">
                             <h3 class="text-primary mb-0">{{ $b['bkk_nama'] }}</h3>
                             <div class="small text-gray-800 font-weight-500">{{ $b['bkk_daerah'] }}</div>
                             <div class="small text-gray-500">{{ $b['bkk_alamat'] }}</div>
+                            <div class="small text-gray-500">{{ $b['bkk_telepon'] }}</div>
                         </div>
-                        <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
+                        {{-- <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
                             <div class="small text-gray-500">View listing</div>
-                            <div class="small text-gray-500"><i data-feather="arrow-right"></i></div></div
-                    ></a>
+                            <div class="small text-gray-500"><i data-feather="arrow-right"></i></div>
+                        </div> --}}
+                    </a>
                 </div>
             @endforeach
         </div>

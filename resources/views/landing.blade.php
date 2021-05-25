@@ -8,7 +8,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-up">
                     <h1 class="page-header-title">Selamat Datang di BKK - Online</h1>
-                    <p class="page-header-text mb-5">Welcome to SB UI Kit Pro, a toolkit for building beautiful web interfaces, created by the development team at Start Bootstrap</p>
+                    <p class="page-header-text mb-5">Tempat Berbagi informasi seputar Bursa Kerja Khusus Sekitar Provinsi Sumatera Barat</p>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block" data-aos="fade-up" data-aos-delay="100"><img class="img-fluid" src="{{ asset('sb_ui/assets/img/illustrations/programming.svg') }}" /></div>
             </div>
@@ -49,7 +49,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-3">
                                 <div class="text-white-75 small">BKK</div>
-                                <div class="text-lg font-weight-bold">0</div>
+                                <div class="text-lg font-weight-bold">{{ $bkk->count() }}</div>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-3">
                                 <div class="text-white-75 small">Pencari Kerja</div>
-                                <div class="text-lg font-weight-bold">0</div>
+                                <div class="text-lg font-weight-bold">{{ $pencaker->count() }}</div>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <h6 class="mb-0">Top Stories</h6>
             <div>
-                <a class="text-arrow-icon small" href="#!">View more<i data-feather="arrow-right"></i></a>
+                <a class="text-arrow-icon small" href="{{ route('news') }}">View more<i data-feather="arrow-right"></i></a>
             </div>
         </div>
         <hr class="mb-4" />

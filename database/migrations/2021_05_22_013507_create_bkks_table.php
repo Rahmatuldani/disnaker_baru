@@ -19,6 +19,7 @@ class CreateBkksTable extends Migration
             $table->string('bkk_alamat');
             $table->string('bkk_telepon');
             $table->string('bkk_daerah');
+            $table->string('bkk_photo')->default('bkk.png');
             $table->integer('pencaker')->default(0);
             $table->tinyInteger('is_actived');
             $table->timestamps();

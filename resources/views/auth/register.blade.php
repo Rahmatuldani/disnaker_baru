@@ -36,7 +36,6 @@
                                 <input class="form-control" id="telepon" name="telepon" type="text" placeholder="No Telp/HP" value="{{ old('telepon') }}"/>
                             </div>
 
-
                             <!-- Form Group (email address) -->
                             <div class="form-group">
                                 <input class="form-control @error('email') is-invalid @enderror" id="inputEmailAddress" name="email" type="email" aria-describedby="emailHelp" placeholder="Email" value="{{ old('email') }}"/>

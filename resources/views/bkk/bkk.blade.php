@@ -36,7 +36,7 @@
                 <div class="card-header">Profile Picture</div>
                 <div class="card-body text-center">
                     <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="{{ asset('images/'.$bkk->bkk_photo) }}" alt />
+                    <img class="img-account-profile rounded-circle mb-2" src="{{ asset('bkk/'.$bkk->bkk_photo) }}" alt />
                     <!-- Profile picture help block-->
                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                     <!-- Profile picture upload button-->

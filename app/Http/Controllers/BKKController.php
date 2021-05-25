@@ -21,6 +21,7 @@ class BKKController extends Controller
     {
         $data = array(
             'pencaker' => Pencaker::where('bkk_id', Auth::user()->bkk_id)->get(),
+            'bkk' => BKK::find(Auth::user()->bkk_id),
         );
         return view('bkk.dashboard', $data);
     }
@@ -62,6 +63,13 @@ class BKKController extends Controller
             $bkk->save();
 
             return redirect()->route('bkk.pencaker')->with('message', 'Pencari kerja berhasil ditambah!');
+        } else if ($action == 'delete') {
+            $user = Pencaker::find($request['pencaker_id']);
+            $bkk = BKK::find($user->bkk_id);
+            $bkk->pencaker = $bkk->pencaker - 1;
+            $bkk->save();
+            $user->delete();
+            return redirect()->route('bkk.pencaker')->with('message', 'Pencari kerja berhasil dihapus!');
         }
     }
 
@@ -140,8 +148,9 @@ class BKKController extends Controller
             $file = $request->file('photo');
             $bkk = BKK::find(Auth::user()->bkk_id);
 
+
             // Generate a file name with extension
-            $fileName = $bkk->nama.'.'.$file->getClientOriginalExtension();
+            $fileName = $bkk->bkk_nama.'.'.$file->getClientOriginalExtension();
 
             Storage::disk('bkk')->put($fileName, File::get($file));
             // $path = $file->storeAs('public/images', $fileName);
@@ -194,7 +203,17 @@ class BKKController extends Controller
             );
 
             $pdf = PDF::loadView('bkk.print', $data)->setPaper('legal', 'landscape');
-            return $pdf->stream('invoice.pdf');
+            return $pdf->download('daftar_pencari_kerja.pdf');
+        }
+    }
+
+    public function ipk1(Request $request, $action = null)
+    {
+        if ($action == null) {
+            $data = array(
+                'bkk' => BKK::find(Auth::user()->bkk_id),
+            );
+            return view('bkk.laporan.ipk1', $data);
         }
     }
 }

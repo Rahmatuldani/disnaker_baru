@@ -19,8 +19,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('bkkPage/{limit?}', [App\Http\Controllers\HomePageController::class, 'bkk'])->name('bkk');
-
+Route::match(['get', 'post'], 'bkkPage/{limit?}', [App\Http\Controllers\HomePageController::class, 'bkk'])->name('bkk');
+Route::match(['get', 'post'], 'newsPage/{limit?}', [App\Http\Controllers\HomePageController::class, 'news'])->name('news');
 
 
 Route::middleware(['auth','verified'])->group(function () {
@@ -34,6 +34,7 @@ Route::middleware(['auth','verified'])->group(function () {
         Route::match(['get', 'post'], 'bkk/{action?}', [App\Http\Controllers\BKKController::class, 'bkk'])->name('bkk.bkk');
         Route::match(['get', 'post'], 'security/{action?}', [App\Http\Controllers\BKKController::class, 'security'])->name('bkk.security');
         Route::post('print', [App\Http\Controllers\BKKController::class, 'print'])->name('bkk.print');
+        Route::match(['get', 'post'], 'ipk1/{action?}', [App\Http\Controllers\BKKController::class, 'ipk1'])->name('bkk.ipk1');
     });
 });
 

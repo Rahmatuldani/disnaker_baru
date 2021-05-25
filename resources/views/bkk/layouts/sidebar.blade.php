@@ -41,16 +41,26 @@
                 </nav>
             </div>
 
-            <!-- Sidenav Accordion (Dashboard)-->
-            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLaporan" aria-expanded="false" aria-controls="collapseDashboards">
+            <!-- Sidenav Accordion (Pages)-->
+            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                 <div class="nav-link-icon"><i data-feather="list"></i></div>
                 Laporan
                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
-            <div class="collapse" id="collapseLaporan" data-parent="#accordionSidenav">
-                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+            <div class="collapse" id="collapsePages" data-parent="#accordionSidenav">
+                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                     <a class="nav-link" href="{{ route('bkk.lpencaker') }}">Pencari Kerja</a>
-                    {{-- <a class="nav-link" href="{{ route('bkk.llowongan') }}">Lowongan Pekerjaan</a> --}}
+
+                    <!-- Nested Sidenav Accordion (Pages -> Account)-->
+                    <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                        IPK
+                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="pagesCollapseAccount" data-parent="#accordionSidenavPagesMenu">
+                        <nav class="sidenav-menu-nested nav">
+                            <a class="nav-link" href="{{ route('bkk.ipk1') }}">III/1</a>
+                        </nav>
+                    </div>
                 </nav>
             </div>
         </div>

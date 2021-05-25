@@ -23,9 +23,10 @@ class Pencaker extends Model
      * @var array
      */
     protected $fillable = [
-        'username',
+        'user_id',
         'daerah',
-        'bkk',
+        'nama',
+        'bkk_id',
         'nik',
         'tempat_lahir',
         'tanggal_lahir',

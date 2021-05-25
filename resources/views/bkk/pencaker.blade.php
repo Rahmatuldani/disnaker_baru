@@ -67,7 +67,7 @@
                                 <td>{{ $p['tempat_lahir'].'/'.$p['tanggal_lahir'] }}</td>
                                 <td>{{ $p['telepon'] }}</td>
                                 <td>{{ $p['daerah'] }}</td>
-                                <td>{{ $p['bkk'] }}</td>
+                                <td>{{ $p['bkk_nama'] }}</td>
                                 <td>{{ $p['is_actived'] ? 'Aktif' : 'Tidak Aktif' }}</td>
                                 <td>
                                     <button class="btn btn-datatable btn-icon btn-transparent-dark mr-2"><i data-feather="edit"></i></button>
@@ -93,6 +93,7 @@
             <div class="modal-body">
                 <form action="{{ route('bkk.pencaker', 'add') }}" method="POST" id="pencakerForm">
                     @csrf
+                    <input type="hidden" name="user_id" value="{{Auth::user()->user_id}}">
                     <h5>Identitas Pencaker</h5>
                     <!-- Form Group (nik)-->
                     <div class="form-group">
@@ -131,11 +132,11 @@
                             <label class="small" for="">Jenis Kelamin</label>
                             <div class="row ml-4">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio1" value="l" checked>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio1" value="Laki-laki" checked>
                                     <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio2" value="p">
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio2" value="Perempuan">
                                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                                 </div>
                             </div>
@@ -148,24 +149,24 @@
                             <label class="small" for="">Agama</label>
                             <div class="row ml-4">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio1" value="islam" checked>
+                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio1" value="Islam" checked>
                                     <label class="form-check-label" for="inlineRadio1">Islam</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="kristen">
+                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Kristen">
                                     <label class="form-check-label" for="inlineRadio2">Kristen</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio1" value="hindu">
+                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio1" value="Hindu">
                                     <label class="form-check-label" for="inlineRadio1">Hindu</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="budha">
+                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Budha">
                                     <label class="form-check-label" for="inlineRadio2">Budha</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="konghuchu">
-                                    <label class="form-check-label" for="inlineRadio2">Honghuchu</label>
+                                    <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Konghuchu">
+                                    <label class="form-check-label" for="inlineRadio2">Konghuchu</label>
                                 </div>
                             </div>
                         </div>
@@ -177,19 +178,19 @@
                             <label class="small" for="">Status Menikah</label>
                             <div class="row ml-4">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio1" value="lajang" checked>
+                                    <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio1" value="Lajang" checked>
                                     <label class="form-check-label" for="inlineRadio1">Lajang</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio2" value="sudah menikah">
+                                    <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio2" value="Sudah menikah">
                                     <label class="form-check-label" for="inlineRadio2">Sudah Menikah</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio1" value="janda">
+                                    <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio1" value="Janda">
                                     <label class="form-check-label" for="inlineRadio1">Janda</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio2" value="duda">
+                                    <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio2" value="Duda">
                                     <label class="form-check-label" for="inlineRadio2">Duda</label>
                                 </div>
                             </div>
@@ -230,16 +231,6 @@
                     <div class="form-group">
                         <input class="form-control @error('email') is-invalid @enderror" id="inputEmailAddress" name="email" type="email" aria-describedby="emailHelp" placeholder="Email*" value="{{ old('email') }}"/>
                         @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-
-                    <!-- Form Row-->
-                    <div class="form-group">
-                        <input class="form-control @error('username') is-invalid @enderror" id="username" name="username" type="text" placeholder="Username*" value="{{ old('username') }}"/>
-                        @error('username')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

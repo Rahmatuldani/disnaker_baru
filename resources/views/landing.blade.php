@@ -49,7 +49,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-3">
                                 <div class="text-white-75 small">BKK</div>
-                                <div class="text-lg font-weight-bold">0</div>
+                                <div class="text-lg font-weight-bold">{{ $bkk->count() }}</div>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-3">
                                 <div class="text-white-75 small">Pencari Kerja</div>
-                                <div class="text-lg font-weight-bold">0</div>
+                                <div class="text-lg font-weight-bold">{{ $pencaker->count() }}</div>
                             </div>
                         </div>
                     </div>

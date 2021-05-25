@@ -39,7 +39,7 @@
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <a class="card lift h-100" href="#!"
                         ><div class="card-flag card-flag-dark card-flag-top-right">Listed {{ date('M Y', strtotime($b['created_at'])) }}</div>
-                        <img class="card-img-top" src="https://source.unsplash.com/2d4lAQAlbDA/800x500" alt="..." />
+                        <img class="card-img-top" src="{{ asset('images/'.$b['bkk_photo']) }}" alt="..." />
                         <div class="card-body">
                             <h3 class="text-primary mb-0">{{ $b['bkk_nama'] }}</h3>
                             <div class="small text-gray-800 font-weight-500">{{ $b['bkk_daerah'] }}</div>

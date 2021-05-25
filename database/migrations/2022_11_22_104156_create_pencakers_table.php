@@ -16,6 +16,7 @@ class CreatePencakersTable extends Migration
         Schema::create('pencakers', function (Blueprint $table) {
             $table->integer('pencaker_id')->autoIncrement();
             $table->integer('user_id');
+            $table->string('nama');
             $table->string('daerah');
             $table->integer('bkk_id');
             $table->string('nik');
@@ -31,6 +32,7 @@ class CreatePencakersTable extends Migration
             $table->string('sekolah');
             $table->string('jurusan');
             $table->string('pelatihan')->nullable();
+            $table->string('photo')->default('user.png');
             $table->tinyInteger('is_actived');
             $table->timestamps();
 

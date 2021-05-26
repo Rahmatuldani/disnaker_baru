@@ -671,6 +671,7 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Exports\\IPK1Export' => __DIR__ . '/../..' . '/app/Exports/IPK1Export.php',
         'App\\Exports\\PencakerExport' => __DIR__ . '/../..' . '/app/Exports/PencakerExport.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -694,6 +695,8 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\BKK' => __DIR__ . '/../..' . '/app/Models/BKK.php',
         'App\\Models\\District' => __DIR__ . '/../..' . '/app/Models/District.php',
+        'App\\Models\\IPK1' => __DIR__ . '/../..' . '/app/Models/IPK1.php',
+        'App\\Models\\IPK1Names' => __DIR__ . '/../..' . '/app/Models/IPK1Names.php',
         'App\\Models\\Pencaker' => __DIR__ . '/../..' . '/app/Models/Pencaker.php',
         'App\\Models\\Perusahaan' => __DIR__ . '/../..' . '/app/Models/Perusahaan.php',
         'App\\Models\\Province' => __DIR__ . '/../..' . '/app/Models/Province.php',

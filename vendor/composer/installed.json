@@ -9042,7 +9042,6 @@
     ],
     "dev": true,
     "dev-package-names": [
-        "barryvdh/laravel-debugbar",
         "doctrine/instantiator",
         "facade/flare-client-php",
         "facade/ignition",
@@ -9051,7 +9050,6 @@
         "filp/whoops",
         "hamcrest/hamcrest-php",
         "laravel/sail",
-        "maximebf/debugbar",
         "mockery/mockery",
         "myclabs/deep-copy",
         "nunomaduro/collision",
@@ -9083,7 +9081,6 @@
         "sebastian/resource-operations",
         "sebastian/type",
         "sebastian/version",
-        "symfony/debug",
         "theseer/tokenizer"
     ]
 }

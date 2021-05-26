@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Exports\\IPK1Export' => $baseDir . '/app/Exports/IPK1Export.php',
     'App\\Exports\\PencakerExport' => $baseDir . '/app/Exports/PencakerExport.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -31,6 +32,8 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\BKK' => $baseDir . '/app/Models/BKK.php',
     'App\\Models\\District' => $baseDir . '/app/Models/District.php',
+    'App\\Models\\IPK1' => $baseDir . '/app/Models/IPK1.php',
+    'App\\Models\\IPK1Names' => $baseDir . '/app/Models/IPK1Names.php',
     'App\\Models\\Pencaker' => $baseDir . '/app/Models/Pencaker.php',
     'App\\Models\\Perusahaan' => $baseDir . '/app/Models/Perusahaan.php',
     'App\\Models\\Province' => $baseDir . '/app/Models/Province.php',

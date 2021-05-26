@@ -34,7 +34,9 @@ Route::middleware(['auth','verified'])->group(function () {
         Route::match(['get', 'post'], 'bkk/{action?}', [App\Http\Controllers\BKKController::class, 'bkk'])->name('bkk.bkk');
         Route::match(['get', 'post'], 'security/{action?}', [App\Http\Controllers\BKKController::class, 'security'])->name('bkk.security');
         Route::post('print', [App\Http\Controllers\BKKController::class, 'print'])->name('bkk.print');
+        Route::post('printIPK1', [App\Http\Controllers\BKKController::class, 'printIPK1'])->name('bkk.printipk1');
         Route::match(['get', 'post'], 'ipk1/{action?}', [App\Http\Controllers\BKKController::class, 'ipk1'])->name('bkk.ipk1');
+        Route::get('status/{id}/{stats}', [App\Http\Controllers\BKKController::class, 'status'])->name('bkk.status');
     });
 });
 

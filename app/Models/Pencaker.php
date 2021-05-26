@@ -30,6 +30,7 @@ class Pencaker extends Model
         'nik',
         'tempat_lahir',
         'tanggal_lahir',
+        'umur',
         'alamat',
         'jk',
         'agama',
@@ -40,6 +41,8 @@ class Pencaker extends Model
         'sekolah',
         'jurusan',
         'pelatihan',
+        'status_kerja',
+        'masuk',
         'is_actived',
     ];
 }

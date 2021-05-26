@@ -862,6 +862,7 @@ class ComposerStaticInit59c8164b42fd40c2ab39065422f2d58b
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\IPK1Seeder' => __DIR__ . '/../..' . '/database/seeders/IPK1Seeder.php',
         'Database\\Seeders\\IndoRegionDistrictSeeder' => __DIR__ . '/../..' . '/database/seeders/IndoRegionDistrictSeeder.php',
         'Database\\Seeders\\IndoRegionProvinceSeeder' => __DIR__ . '/../..' . '/database/seeders/IndoRegionProvinceSeeder.php',
         'Database\\Seeders\\IndoRegionRegencySeeder' => __DIR__ . '/../..' . '/database/seeders/IndoRegionRegencySeeder.php',

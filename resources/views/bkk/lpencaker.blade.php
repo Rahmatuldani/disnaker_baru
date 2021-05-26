@@ -32,8 +32,8 @@
                         <label for="exampleFormControlSelect1">Pilih Jenis Kelamin</label>
                         <select class="form-control" id="exampleFormControlSelect1" name="jk">
                             <option value="all">Semua</option>
-                            <option value="l">Laki-laki</option>
-                            <option value="p">Perempuan</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
                         </select>
                     </div>
                 </div>

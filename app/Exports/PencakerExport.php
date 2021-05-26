@@ -9,13 +9,14 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class PencakerExport implements FromCollection, WithHeadings, ShouldAutoSize
 {
-    protected $awal, $akhir, $bkk;
+    protected $awal, $akhir, $bkk, $jk;
 
-    public function __construct($awal, $akhir, $bkk)
+    public function __construct($awal, $akhir, $bkk, $jk)
     {
         $this->awal = $awal;
         $this->akhir = $akhir;
         $this->bkk = $bkk;
+        $this->jk = $jk;
     }
 
     /**
@@ -23,22 +24,41 @@ class PencakerExport implements FromCollection, WithHeadings, ShouldAutoSize
     */
     public function collection()
     {
+        if ($this->jk == 'all') {
+            return Pencaker::join('bkks', 'bkks.bkk_id', '=', 'pencakers.bkk_id')
+            ->whereBetween('pencakers.created_at', [$this->awal, $this->akhir])
+            ->where('pencakers.bkk_id', $this->bkk)
+            ->get([
+                'nama',
+                'nik',
+                'tinggi_badan',
+                'daerah',
+                'bkk_nama',
+                'tempat_lahir',
+                'tanggal_lahir',
+                'jk',
+                'agama',
+                'status_nikah',
+                'pekerjaan'
+            ]);
+        }
         return Pencaker::join('bkks', 'bkks.bkk_id', '=', 'pencakers.bkk_id')
-        ->whereBetween('pencakers.created_at', [$this->awal, $this->akhir])
-        ->where('pencakers.bkk_id', $this->bkk)
-        ->get([
-            'nama',
-            'nik',
-            'tinggi_badan',
-            'daerah',
-            'bkk_nama',
-            'tempat_lahir',
-            'tanggal_lahir',
-            'jk',
-            'agama',
-            'status_nikah',
-            'pekerjaan'
-        ]);
+            ->whereBetween('pencakers.created_at', [$this->awal, $this->akhir])
+            ->where('pencakers.bkk_id', $this->bkk)
+            ->where('jk', $this->jk)
+            ->get([
+                'nama',
+                'nik',
+                'tinggi_badan',
+                'daerah',
+                'bkk_nama',
+                'tempat_lahir',
+                'tanggal_lahir',
+                'jk',
+                'agama',
+                'status_nikah',
+                'pekerjaan'
+            ]);
         // return Pencaker::all();
     }
 

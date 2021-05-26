@@ -10,13 +10,9 @@ class TestController extends Controller
 {
     public function index(Request $request, $act = null)
     {
-        if ($act == null) {
-            return view('test');
-        } else {
-            $photo = $request->file('photo');
-            Storage::disk('images')->put($photo->getClientOriginalName(), File::get($photo));
-
-            echo 'oke';
-        }
+        $dateOfBirth = "1999-12-16";
+        $today = date("Y-m-d");
+        $diff = date_diff(date_create($dateOfBirth), date_create($today));
+        echo 'Age is '.$diff->format('%y');
     }
 }

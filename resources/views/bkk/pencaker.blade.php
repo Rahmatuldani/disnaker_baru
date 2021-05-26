@@ -37,24 +37,26 @@
                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Foto</th>
+                            {{-- <th>Foto</th> --}}
                             <th>Nama</th>
                             <th>Tempat/Tgl. Lahir</th>
                             <th>Telepon</th>
                             <th>Daerah</th>
                             <th>BKK</th>
+                            <th>Masuk</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Foto</th>
+                            {{-- <th>Foto</th> --}}
                             <th>Nama</th>
                             <th>Tempat/Tgl. Lahir</th>
                             <th>Telepon</th>
                             <th>Daerah</th>
                             <th>BKK</th>
+                            <th>Masuk</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -62,13 +64,24 @@
                     <tbody>
                         @foreach ($pencaker as $p)
                             <tr>
-                                <td><img src="{{ asset('images/'.$p['photo']) }}" height="80" alt=""></td>
+                                {{-- <td><img src="{{ asset('images/'.$p['photo']) }}" height="80" alt=""></td> --}}
                                 <td>{{ $p['nama'] }}</td>
                                 <td>{{ $p['tempat_lahir'].'/'.date("d M Y", strtotime($p['tanggal_lahir'])) }}</td>
                                 <td>{{ $p['telepon'] }}</td>
                                 <td>{{ $p['daerah'] }}</td>
                                 <td>{{ $p['bkk_nama'] }}</td>
-                                <td>{{ $p['is_actived'] ? 'Aktif' : 'Tidak Aktif' }}</td>
+                                <td>{{ date('M Y', strtotime($p['masuk'])) }}</td>
+                                <td class="m-0 p-0">
+                                    <div class="col m-1 p-0">
+                                        <a href="{{ route('bkk.status', ['id' => $p['pencaker_id'], 'stats' => 'Menunggu']) }}" class="btn btn-xs {{ ($p['status_kerja'] == 'Menunggu') ? 'badge badge-primary' : 'btn-outline-primary' }}">Menunggu</a>
+                                    </div>
+                                    <div class="col m-1 p-0">
+                                        <a href="{{ route('bkk.status', ['id' => $p['pencaker_id'], 'stats' => 'Ditempatkan']) }}" class="btn btn-xs {{ ($p['status_kerja'] == 'Ditempatkan') ? 'badge badge-success' : 'btn-outline-success' }}">Ditempatkan</a>
+                                    </div>
+                                    <div class="col m-1 p-0">
+                                        <a href="{{ route('bkk.status', ['id' => $p['pencaker_id'], 'stats' => 'Dihapuskan']) }}" class="btn btn-xs {{ ($p['status_kerja'] == 'Dihapuskan') ? 'badge badge-secondary' : 'btn-outline-secondary' }}">Dihapuskan</a>
+                                    </div>
+                                </td>
                                 <td>
                                     <button class="btn btn-datatable btn-icon btn-transparent-dark mr-2" data-toggle="modal" data-target="#editPencaker-{{ $p['pencaker_id'] }}"><i data-feather="edit"></i></button>
                                     <button class="btn btn-datatable btn-icon btn-transparent-dark" data-toggle="modal" data-target="#deletePencaker-{{ $p['pencaker_id'] }}"><i data-feather="trash-2"></i></button>
@@ -110,12 +123,12 @@
                                                         <input type="hidden" name="pencaker_id" value="{{$p['pencaker_id']}}">
                                                         <!-- Form Group (nik)-->
                                                         <div class="form-group">
-                                                            <input class="form-control" id="nik" name="nik" type="text" value="{{ $p['nik'] }}" />
+                                                            <input class="form-control" id="nik" name="nik" type="text" placeholder="NIK*" value="{{ $p['nik'] }}" />
                                                         </div>
 
                                                         <!-- Form Group (nama)-->
                                                         <div class="form-group">
-                                                            <input class="form-control" id="nama_pencaker" name="nama_pencaker" type="text" value="{{ $p['nama'] }}" />
+                                                            <input class="form-control" id="nama_pencaker" name="nama_pencaker" type="text" placeholder="Nama*" value="{{ $p['nama'] }}" />
                                                         </div>
 
                                                         <!-- Form Row-->
@@ -123,7 +136,7 @@
                                                             <div class="col-md-6">
                                                                 <!-- Form Group (first name)-->
                                                                 <div class="form-group">
-                                                                    <input class="form-control" name="tempat_lahir" id="tempat_lahir" type="text" value="{{ $p['tempat_lahir'] }}" />
+                                                                    <input class="form-control" name="tempat_lahir" id="tempat_lahir" type="text" placeholder="Tempat Lahir*" value="{{ $p['tempat_lahir'] }}" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -136,7 +149,7 @@
 
                                                         <!-- Form Row-->
                                                         <div class="form-group">
-                                                            <textarea name="alamat_pencaker" class="form-control" id="alamat_pencaker" cols="30" rows="2" placeholder="Alamat*" ></textarea>
+                                                            <textarea name="alamat_pencaker" class="form-control" id="alamat_pencaker" cols="30" rows="2" placeholder="Alamat*" >{{ $p['alamat'] }}</textarea>
                                                         </div>
 
                                                         <!-- Form Row    -->
@@ -145,11 +158,11 @@
                                                                 <label class="small" for="">Jenis Kelamin</label>
                                                                 <div class="row ml-4">
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio1" value="Laki-laki" checked>
+                                                                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio1" value="Laki-laki" {{($p['jk'] == 'Laki-laki') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio2" value="Perempuan">
+                                                                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio2" value="Perempuan"  {{($p['jk'] == 'Perempuan') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                                                                     </div>
                                                                 </div>
@@ -162,23 +175,23 @@
                                                                 <label class="small" for="">Agama</label>
                                                                 <div class="row ml-4">
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio1" value="Islam" checked>
+                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio1" value="Islam" {{($p['agama'] == 'Islam') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio1">Islam</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Kristen">
+                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Kristen" {{($p['agama'] == 'Kristen') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio2">Kristen</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio1" value="Hindu">
+                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio1" value="Hindu" {{($p['agama'] == 'Hindu') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio1">Hindu</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Budha">
+                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Budha" {{($p['agama'] == 'Budha') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio2">Budha</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Konghuchu">
+                                                                        <input class="form-check-input" type="radio" name="agama" id="inlineRadio2" value="Konghuchu" {{($p['agama'] == 'Konghuchu') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio2">Konghuchu</label>
                                                                     </div>
                                                                 </div>
@@ -191,19 +204,19 @@
                                                                 <label class="small" for="">Status Menikah</label>
                                                                 <div class="row ml-4">
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio1" value="Lajang" checked>
+                                                                        <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio1" value="Lajang" {{($p['status_nikah'] == 'Lajang') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio1">Lajang</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio2" value="Sudah menikah">
+                                                                        <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio2" value="Sudah menikah" {{($p['status_nikah'] == 'Sudah menikah') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio2">Sudah Menikah</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio1" value="Janda">
+                                                                        <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio1" value="Janda" {{($p['status_nikah'] == 'Janda') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio1">Janda</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio2" value="Duda">
+                                                                        <input class="form-check-input" type="radio" name="status_nikah" id="inlineRadio2" value="Duda" {{($p['status_nikah'] == 'Duda') ? 'checked' : ''}}>
                                                                         <label class="form-check-label" for="inlineRadio2">Duda</label>
                                                                     </div>
                                                                 </div>
@@ -212,42 +225,32 @@
 
                                                         <!-- Form Row-->
                                                         <div class="form-group">
-                                                            <input class="form-control" id="pekerjaan" name="pekerjaan" type="text" placeholder="Pekerjaan*" />
+                                                            <input class="form-control" id="pekerjaan" name="pekerjaan" type="text" placeholder="Pekerjaan*" value="{{$p['pekerjaan']}}"/>
                                                         </div>
 
                                                         <!-- Form Row-->
                                                         <div class="form-group">
-                                                            <input class="form-control" id="tinggi" name="tinggi" type="number" placeholder="Tinggi Badan*" />
+                                                            <input class="form-control" id="tinggi" name="tinggi" type="number" placeholder="Tinggi Badan*" value="{{$p['tinggi_badan']}}" />
                                                         </div>
 
                                                         <!-- Form Row-->
                                                         <div class="form-group">
-                                                            <input class="form-control" id="telepon_pencaker" name="telepon_pencaker" type="text" placeholder="No Telepon/HP*" />
+                                                            <input class="form-control" id="telepon_pencaker" name="telepon_pencaker" type="text" placeholder="No Telepon/HP*" value="{{$p['telepon']}}"/>
                                                         </div>
 
                                                         <!-- Form Row-->
                                                         <div class="form-group">
-                                                            <input class="form-control" id="sekolah" name="sekolah" type="text" placeholder="Asal Sekolah*" />
+                                                            <input class="form-control" id="sekolah" name="sekolah" type="text" placeholder="Asal Sekolah*" value="{{$p['sekolah']}}"/>
                                                         </div>
 
                                                         <!-- Form Row-->
                                                         <div class="form-group">
-                                                            <input class="form-control" id="jurusan" name="jurusan" type="text" placeholder="Jurusan*" />
+                                                            <input class="form-control" id="jurusan" name="jurusan" type="text" placeholder="Jurusan*" value="{{$p['jurusan']}}"/>
                                                         </div>
 
                                                         <!-- Form Row-->
                                                         <div class="form-group">
-                                                            <input class="form-control" id="pelatihan" name="pelatihan" type="text" placeholder="Pelatihan yang pernah diambil di BLK(opsional)" />
-                                                        </div>
-
-                                                        <!-- Form Group (email address) -->
-                                                        <div class="form-group">
-                                                            <input class="form-control @error('email') is-invalid @enderror" id="inputEmailAddress" name="email" type="email" aria-describedby="emailHelp" placeholder="Email*" value="{{ old('email') }}"/>
-                                                            @error('email')
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                                                            @enderror
+                                                            <input class="form-control" id="pelatihan" name="pelatihan" type="text" placeholder="Pelatihan yang pernah diambil di BLK(opsional)" value="{{$p['pelatihan']}}"/>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -258,7 +261,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </td>
                             </tr>
                         @endforeach
@@ -412,16 +414,6 @@
                     <!-- Form Row-->
                     <div class="form-group">
                         <input class="form-control" id="pelatihan" name="pelatihan" type="text" placeholder="Pelatihan yang pernah diambil di BLK(opsional)" />
-                    </div>
-
-                    <!-- Form Group (email address) -->
-                    <div class="form-group">
-                        <input class="form-control @error('email') is-invalid @enderror" id="inputEmailAddress" name="email" type="email" aria-describedby="emailHelp" placeholder="Email*" value="{{ old('email') }}"/>
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                     </div>
                 </form>
             </div>

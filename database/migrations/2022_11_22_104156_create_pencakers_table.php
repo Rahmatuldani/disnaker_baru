@@ -23,6 +23,7 @@ class CreatePencakersTable extends Migration
             $table->string('tempat_lahir', 20);
             $table->date('tanggal_lahir');
             $table->string('alamat');
+            $table->integer('umur');
             $table->string('jk', 10);
             $table->string('agama', 10);
             $table->string('status_nikah');
@@ -33,6 +34,8 @@ class CreatePencakersTable extends Migration
             $table->string('jurusan');
             $table->string('pelatihan')->nullable();
             $table->string('photo')->default('user.png');
+            $table->string('status_kerja');
+            $table->string('masuk');
             $table->tinyInteger('is_actived');
             $table->timestamps();
 
